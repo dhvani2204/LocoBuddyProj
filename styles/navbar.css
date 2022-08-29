@@ -1,0 +1,48 @@
+/* Media Queries */
+@media (min-width: 1281px) {
+    .stylish-navbar {
+      margin-top: 20px;
+      margin-left: 15%;
+      margin-right: 15%;
+    }
+  }
+  
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    .stylish-navbar {
+      margin-top: 20px;
+      margin-left: 15%;
+      margin-right: 15%;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .stylish-navbar {
+      margin-top: 20px;
+      margin-left: 15%;
+      margin-right: 15%;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .stylish-navbar {
+      margin-top: 20px;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+  }
+  
+  @media (min-width: 481px) and (max-width: 767px) {
+    .stylish-navbar {
+      margin-top: 20px;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+  }
+  
+  @media (min-width: 320px) and (max-width: 480px) {
+    .stylish-navbar {
+      margin-top: 20px;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+  }

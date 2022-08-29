@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Login</title>
+    <!-- Bootstrap CDN -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles/login.css" />
+    <link rel="stylesheet" href="/styles/navbar.css" />
+    <script>
+        function purple(event) {
+            event.target.style.borderColor = "#961e47";
+            event.target.style.borderWidth = "2px";
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+    <style>
+        body {
+            background-image: linear-gradient(to left, #dedede, #ccc7e2, #bbb1e5, #aa9ae6, #9983e7);
+        }
+        .register{
+    padding: 3%;
+}
+.register-left{
+    text-align: center;
+    color: #fff;
+    margin-top: 4%;
+}
+.register-left input{
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    width: 60%;
+    background: #f8f9fa;
+    font-weight: bold;
+    color: #383d41;
+    margin-top: 30%;
+    margin-bottom: 3%;
+    cursor: pointer;
+}
+.register-right{
+    background: #f8f9fa;
+    border-top-left-radius: 10% 50%;
+    border-bottom-left-radius: 10% 50%;
+}
+.register-left img{
+    margin-top: 15%;
+    margin-bottom: 5%;
+    width: 25%;
+    -webkit-animation: mover 2s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+.register-left p{
+    font-weight: lighter;
+    padding: 12%;
+    margin-top: -9%;
+}
+.register .login-register-form{
+    padding: 10%;
+    margin-top: 20%;
+    
+}
+
+.register .signup-register-form{
+    padding: 10%;
+    margin-top: 10%;
+    
+}
+
+
+.register .nav-tabs{
+    margin-top: 3%;
+    border: none;
+    background: #9983E7;
+    border-radius: 1.5rem;
+    width: 28%;
+    float: right;
+}
+.register .nav-tabs .nav-link{
+    padding: 2%;
+    height: 36px;
+    font-weight: 600;
+    color: #fff;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+.register .nav-tabs .nav-link:hover{
+    border: none;
+}
+.register .nav-tabs .nav-link.active{
+    width: 100px;
+    color: #9983E7;
+    border: 2px solid #9983E7;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+}
+.login-register-heading{
+    text-align: center;
+    margin-top: 7%;
+    margin-bottom: -25%;
+    color: #495057;
+}
+.signup-register-heading{
+    text-align: center;
+    margin-top: 3%;
+    margin-bottom: -15%;
+    color: #495057;
+}
+
+
+
+
+  
+  :root {
+    --input-padding-x: 1.5rem;
+    --input-padding-y: 0.75rem;
+  }
+
+  
+  input:focus,
+  select:focus,
+  button:focus {
+    outline: none;
+  }
+  
+  /* Change the white to any color ;) */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+  }
+  
+  
+  
+  /* Input focus */
+  .form-control:focus {
+    box-shadow: none;
+    border: 2px solid#9983E7;
+    
+  
+  }
+  
+  
+  button:focus {
+    outline: none;
+  }
+  
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 2rem;
+    border: 2px solid transparent;
+    padding: 10px 25px;
+    width: 100%;
+    color: #495057;
+    outline: none;
+    resize: none;
+  }
+  
+  select:focus {
+    border: 2px solid #9983E7;
+  }
+  
+  .form-label-group {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  
+  .form-label-group input {
+    height: auto;
+    border-radius: 2rem;
+  }
+  
+  .form-label-group > input,
+  .form-label-group > label {
+    padding: var(--input-padding-y) var(--input-padding-x);
+  }
+  
+  .form-label-group > label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+    line-height: 1.5;
+    color: #495057;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    transition: all 0.1s ease-in-out;
+  }
+  
+  .form-label-group input::-webkit-input-placeholder {
+    color: transparent;
+  }
+  
+  .form-label-group input::placeholder {
+    color: transparent;
+  }
+  
+  .form-label-group input:not(:placeholder-shown) {
+    padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+    padding-bottom: calc(var(--input-padding-y) / 3);
+  }
+  
+  .form-label-group input:not(:placeholder-shown) ~ label {
+    padding-top: calc(var(--input-padding-y) / 3);
+    padding-bottom: calc(var(--input-padding-y) / 3);
+    font-size: 12px;
+    color: #777;
+  }
+  
+  /* Fallback for Edge
+  -------------------------------------------------- */
+  @supports (-ms-ime-align: auto) {
+    .form-label-group > label {
+      display: none;
+    }
+    .form-label-group input::-ms-input-placeholder {
+      color: #777;
+    }
+  }
+  
+  /* Fallback for IE
+      -------------------------------------------------- */
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .form-label-group > label {
+      display: none;
+    }
+    .form-label-group input:-ms-input-placeholder {
+      color: #777;
+    }
+  }
+  
+  /* Signup btn */
+  
+  .btn {
+    background-color: #9983E7;
+    padding: 5px;
+    color: white;
+    margin-top: 30px;
+    width: 60%;
+    border-radius: 1.5rem;
+    font-size: 18px !important;
+  }
+  
+  .btn:hover {
+    border: 2px solid #9983E7;
+    background-color: white;
+    color: black;
+  }
+  
+  /* Footer */
+  
+  footer {
+    width: 100%;
+    text-align: center;
+    height: 80px;
+    background-color: #fcd5ce;
+  }
+  
+  .dropdown .dropdown-menu a:hover {
+    color: #fff;
+    background-color:#2A58C4;
+    border-color: #fff;
+  }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-lg navbar-light stylish-navbar"
+        style="border:2px solid royalblue; background-color: white; border-radius: 50px; padding-top: 15px; padding-bottom: 15px; box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.1), 0 2px 10px 0 rgba(0, 0, 0, 0.1);">
+        <a class="navbar-brand" href="index.html">
+            <img src="images/download (4).jpg" alt="food-donation-app-logo" style="height: 70px; width: 70px;"class="ml-5"
+                alt="Pragati" />
+        </a><span style="font-weight:bolder;font-size:30px;color: #9983E7">LocoBuddy</span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item dropdown" style="padding-left: 20px; padding-right: 20px">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbar-item" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #204872">
+                        <span class="fa fa-user" style="font-size: 25px;"></span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="">Your Profile</a>
+                        <a class="dropdown-item" href="index.html" onclick="logout(event);">Logout</a>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+    </nav>
+    <!-- End of Navbar -->
+
+
+    <div class="container-fluid register">
+        <div class="row">
+            <div class="col-md-2 register-left">
+                <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+                <h3>Welcome</h3>
+                <p>You are almost there!</p>
+                <p><a style="color:white; font-weight: bolder;" href="signup.html">New here? Signup now!</a></p>
+
+            </div>
+            <div class="col-md-10 register-right">
+                <div class="row text-center">
+                    <div class="col-md-8">
+                        <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                    aria-controls="home" aria-selected="true">Flat/Pg/Rest</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                                    aria-controls="profile" aria-selected="false">Student</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <h3 class="login-register-heading" style="color:#9983E7">Login as a Flat/Pg/Restaurant</h3>
+                        <div class="row login-register-form">
+                            <div class="col-md-10 offset-md-1">
+                                <div class="form-group form-label-group">
+                                    <input type="email" class="form-control" placeholder="Your Email *" value=""
+                                        id="email" />
+                                    <label id="label-email" for="email">Email</label>
+                                </div>
+                                <div class="form-group form-label-group">
+                                    <input type="password" class="form-control" placeholder="Password *" value=""
+                                        id="password" />
+                                    <label id="label-password" for="password">Password</label>
+                                </div>
+
+
+                            </div>
+                            <div class="col-12 col-md-6 offset-md-3 text-center">
+                                <input type="button" class="btn btn-large" value="Login" id="rest-btn" />
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <h3 class="login-register-heading" style="color:#9983E7">Login as a Student</h3>
+                        <div class="row login-register-form">
+                            <div class="col-md-10 offset-md-1">
+                                <div class="form-group form-label-group">
+                                    <input type="email" class="form-control" placeholder="Your Email *" value=""
+                                        id="user-email" />
+                                    <label id="label-user-email" for="user-email">Email</label>
+                                </div>
+                                <div class="form-group form-label-group">
+                                    <input type="password" class="form-control" placeholder="Password *" value=""
+                                        id="user-password" />
+                                    <label id="label-user-password" for="user-password">Password</label>
+                                </div>
+
+                            </div>
+                            <div class="col-12 col-md-6 offset-md-3 text-center">
+                                <input type="button" class="btn btn-large" value="Login" id="user-btn" />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="./javascript/login.js"></script>
+
+</body>
+
+</html>
